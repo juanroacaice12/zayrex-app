@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Desactiva Turbopack forzando a usar Webpack clásico
   webpack: (config) => {
     return config;
   },
   experimental: {
-    turboMode: false, // 👈 Esta es la clave correcta en Next.js 16
+    turbo: false, // Desactiva Turbopack completamente
   },
+  output: 'standalone', // 🧠 Hace que Render ejecute correctamente Next
 };
 
 module.exports = nextConfig;
