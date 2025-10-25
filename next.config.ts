@@ -1,12 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Desactiva Turbopack completamente
+  experimental: {
+    turbo: false,
+  },
   webpack: (config) => {
-    config.resolve.alias = {
-      ...(config.resolve.alias ?? {}),
-    };
     return config;
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
